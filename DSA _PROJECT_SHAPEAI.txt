@@ -1,0 +1,307 @@
+(1)
+  #include <iostream>
+using namespace std;
+ 
+int main()
+{
+	cout << "\n\n Swap two numbers :\n";
+	cout << "-----------------------\n";
+	int num1, num2, temp;
+	cout << " Input 1st number : ";
+	cin >> num1 ;
+	cout << " Input 2nd number : ";
+	cin >> num2;	
+	temp=num2;
+	num2=num1;
+	num1=temp;
+    cout << " After swapping the 1st number is : "<< num1 <<"\n" ; 
+    cout << " After swapping the 2nd number is : "<< num2 <<"\n\n" ; 	
+}
+
+
+(2)
+  #include <iostream>
+using namespace std;
+
+int main() {    
+    float n1, n2, n3;
+
+    cout << "Enter three numbers: ";
+    cin >> n1 >> n2 >> n3;
+
+    if(n1 >= n2 && n1 >= n3)
+        cout << "Largest number: " << n1;
+
+    if(n2 >= n1 && n2 >= n3)
+        cout << "Largest number: " << n2;
+    
+    if(n3 >= n1 && n3 >= n2)
+        cout << "Largest number: " << n3;
+  
+    return 0;
+}
+
+(3)
+   #include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int year;
+ 
+    cout << "Enter the year in yyyy format : ";
+    cin >> year;
+    if (year % 4 == 0)
+        cout << year << " is a leap year";
+    else
+        cout << year << " is not a leap year";
+}
+
+(4) 
+   #include <iostream>
+using namespace std;
+
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm = 0;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    cout << "Fibonacci Series: ";
+
+    for (int i = 1; i <= n; ++i) {
+        // Prints the first two terms.
+        if(i == 1) {
+            cout << t1 << ", ";
+            continue;
+        }
+        if(i == 2) {
+            cout << t2 << ", ";
+            continue;
+        }
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        
+        cout << nextTerm << ", ";
+    }
+    return 0;
+}
+
+(5)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i, n;
+    bool isPrime = true;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    // 0 and 1 are not prime numbers
+    if (n == 0 || n == 1) {
+        isPrime = false;
+    }
+    else {
+        for (i = 2; i <= n / 2; ++i) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    if (isPrime)
+        cout << n << " is a prime number";
+    else
+        cout << n << " is not a prime number";
+
+    return 0;
+}
+
+
+
+(6)
+   #include<stdio.h>
+int main()
+{
+    int n,i,j;
+    printf("how many rows you want in your pyramid?\n");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=2*n-1;j++)
+        {
+            if(j>=n-(i-1)&&j<= n+(i-1))
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+(7)
+   #include<iostream>
+using namespace std;
+int main ()
+{
+    int A[10], n, i, j, x;
+    cout << "Enter size of array : ";
+    cin >> n;
+    cout << "Enter elements of array : ";
+    for (i = 0; i < n; i++)
+        cin >> A[i];    
+    for (i = 0; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (A[i] < A[j])
+            {
+                x = A[i];
+                A[i] = A[j];
+                A[j] = x;
+            }
+        }
+    }
+    cout << "Second largest number : " << A[1];
+    cout << "\nSecond smallest number : " << A[n - 2];
+    return 0;
+}
+
+(8)
+  def rotLeft(a, d):
+    d = d%len(a)
+    a = a[d:]+a[:d]
+    return a
+
+n,d = map(int,input().split())
+a = list(map(int,input().split()))
+print(*rotLeft(a, d))
+
+(9)
+   #include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+
+using namespace std;
+
+
+int main(){
+int n;
+cin >> n;
+for(int a0 = 0; a0 < n; a0++){
+int grade;
+cin >> grade;
+if (grade >= 38) {
+int rem = grade % 5;
+if (rem >= 3) grade += 5 - rem;
+}
+cout << grade << endl;
+}
+return 0;
+}
+
+(10)
+    #include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+
+
+int main(){
+    string s;
+    cin >> s;
+    int t=1;
+    for (int i=0;i<s.length();i++)
+        if (isupper(s[i]))
+        t++;
+        cout<<t<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
